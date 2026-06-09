@@ -4,16 +4,18 @@
 
 ## What is it?
 
-**Week in Review** is a creative AI application that transforms your Microsoft 365 work week into an engaging, magazine-style narrative story. It connects to your calendar, emails, and Teams conversations via **Microsoft Work IQ**, then uses **GitHub Models (GPT-4o)** to craft a personalized, entertaining summary of your week.
+**Week in Review** is a creative AI application that transforms your Microsoft 365 work week into an engaging, magazine-style narrative story. It integrates with **Microsoft Scout** to fetch your calendar, emails, and Teams conversations, then uses **GitHub Models (GPT-4o)** to craft a personalized, entertaining summary of your week.
 
 Think of it as your personal journalist, turning mundane meetings and emails into a compelling story where YOU are the protagonist.
 
-## 🎯 Microsoft IQ Integration
+## 🎯 Scout Integration (Work IQ)
 
-This project integrates **Work IQ** — the Microsoft 365 intelligence layer:
-- 📅 **Calendar Events** — Meetings, their attendees, and time patterns
+This project seamlessly integrates with **Microsoft Scout** to access Work IQ data:
+- 📅 **Calendar Events** — Meetings, attendees, and time patterns
 - 📧 **Emails** — Key conversations and threads
 - 💬 **Teams Chats** — Collaboration highlights
+
+**No Entra ID app registration needed!** Uses Scout's built-in `workiq_*` tools for authentication.
 
 ## 🛠️ Tech Stack
 
@@ -21,9 +23,10 @@ This project integrates **Work IQ** — the Microsoft 365 intelligence layer:
 |-----------|-----------|
 | Backend | Python + FastAPI |
 | AI/LLM | GitHub Models (GPT-4o) |
-| M365 Auth | MSAL (Device Code Flow) |
-| M365 Data | Microsoft Graph API (Work IQ) |
+| M365 Data Access | Microsoft Scout (Work IQ) |
+| Data Caching | JSON (sample_data/) |
 | Frontend | HTML + CSS (Jinja2 templates) |
+| Automation | Scout Automations (weekly scheduling) |
 | Dev Tool | GitHub Copilot (AI-assisted development) |
 
 ## 🚀 Quick Start
@@ -31,8 +34,7 @@ This project integrates **Work IQ** — the Microsoft 365 intelligence layer:
 ### Prerequisites
 - Python 3.10+
 - A GitHub account with Copilot access (for GitHub Models)
-- A Microsoft 365 account (for live mode)
-- An Azure AD app registration (see Setup below)
+- Microsoft Scout installed and logged in (for Work IQ data access)
 
 ### Installation
 
@@ -51,29 +53,15 @@ pip install -r requirements.txt
 
 # Copy and configure environment variables
 copy .env.example .env
-# Edit .env with your values
+# Edit .env with your GitHub token
 ```
 
-### Azure AD App Registration
-
-1. Go to [Entra ID (Azure AD)](https://entra.microsoft.com) → App registrations → New registration
-2. Name: `Week in Review`
-3. Supported account types: "Accounts in any organizational directory"
-4. Redirect URI: Leave blank (we use Device Code Flow)
-5. After creation, note the **Application (client) ID** and **Directory (tenant) ID**
-6. Go to API permissions → Add permission → Microsoft Graph → Delegated:
-   - `User.Read`
-   - `Mail.Read`
-   - `Calendars.Read`
-   - `Chat.Read`
-7. Under Authentication → Advanced settings → Enable "Allow public client flows" = **Yes**
-
-### GitHub Models Token
+### GitHub Models Token Setup
 
 1. Go to [GitHub Settings → Tokens](https://github.com/settings/tokens)
 2. Create a Fine-Grained Personal Access Token
 3. Under "Permissions" → enable access to GitHub Models
-4. Copy the token to your `.env` file
+4. Copy the token to your `.env` file as `GITHUB_TOKEN`
 
 ### Run the App
 
@@ -83,9 +71,14 @@ python app.py
 
 Then open http://localhost:8000
 
-### Demo Mode (No Auth Required)
+### Two Modes
 
-Click **"Try Demo"** on the homepage to see the app generate a story from sample data — no Microsoft 365 sign-in needed!
+#### 🎬 Demo Mode (No Scout Needed)
+Click **"Generate Demo"** to see the app create a story from sample data — perfect for testing!
+
+#### 🔄 Live Mode (Scout Required)
+1. Set up Scout automation (see below)
+2. Click **"Generate Review"** to create a story from your real work week data
 
 ## 📸 Screenshots
 
@@ -119,11 +112,33 @@ _Coming soon — demo video will be added before submission._
 
 ## 🎨 Features
 
-- **Live Mode**: Authenticates with your M365 account and generates a real story from your actual week
-- **Demo Mode**: Generates a story from sample data (perfect for judges without M365 access)
+- **Scout Integration**: Direct access to Work IQ data via Microsoft Scout (no app registration needed)
+- **Automated Refresh**: Scout automations keep your data fresh every Monday at 9 AM
+- **Demo Mode**: Generate stories from sample data for testing
+- **Live Mode**: Create stories from your real calendar, emails, and Teams chats
 - **Creative Narratives**: Each generation is unique — different tones, themes, and metaphors
 - **Magazine Style**: Beautiful HTML output with styled sections, stats, and mood indicators
-- **Regenerate**: Not happy with the story? Hit regenerate for a fresh take!
+- **Regenerate**: Not happy with the story? Generate a fresh take anytime!
+
+## 🚀 Roadmap & Phase 2
+
+### Phase 1 (Current ✅)
+- ✅ Scout integration via `workiq_*` tools
+- ✅ Automated weekly data refresh
+- ✅ Creative story generation with GitHub Models
+- ✅ Beautiful HTML output
+- ✅ Demo mode for testing
+
+### Phase 2 (Future Enhancements)
+- 🔲 **Optional Entra ID App Registration** — For users who want direct Graph API access without Scout
+- 🔲 **Real-time Streaming** — Stream story generation as it happens
+- 🔲 **Custom Themes** — Choose story tone (comedy, thriller, noir, etc.)
+- 🔲 **Export Options** — PDF, Word, Email delivery
+- 🔲 **Weekly Email Digest** — Automatically email your story every Monday
+- 🔲 **Team Reviews** — Generate stories for team weeks, not just individuals
+- 🔲 **Analytics Dashboard** — Visualize your work patterns (busiest days, top collaborators, etc.)
+
+**Why Scout First?** Scout provides seamless authentication without requiring Entra ID setup, making the app immediately accessible to all users with Microsoft 365 accounts.
 
 ## 📝 License
 
