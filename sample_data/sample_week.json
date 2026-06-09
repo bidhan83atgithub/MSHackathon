@@ -1,0 +1,119 @@
+{
+    "user": {
+        "displayName": "Alex Johnson",
+        "jobTitle": "Senior Software Engineer",
+        "mail": "alex.johnson@contoso.com"
+    },
+    "calendar_events": [
+        {
+            "subject": "Sprint Planning",
+            "start": {"dateTime": "2026-06-02T09:00:00"},
+            "end": {"dateTime": "2026-06-02T10:00:00"},
+            "attendees": [{"emailAddress": {"name": "Team"}}, {"emailAddress": {"name": "PM"}}, {"emailAddress": {"name": "Designer"}}]
+        },
+        {
+            "subject": "1:1 with Manager",
+            "start": {"dateTime": "2026-06-02T14:00:00"},
+            "end": {"dateTime": "2026-06-02T14:30:00"},
+            "attendees": [{"emailAddress": {"name": "Sarah Chen"}}]
+        },
+        {
+            "subject": "Architecture Review - New Auth System",
+            "start": {"dateTime": "2026-06-03T10:00:00"},
+            "end": {"dateTime": "2026-06-03T11:30:00"},
+            "attendees": [{"emailAddress": {"name": "Backend Team"}}, {"emailAddress": {"name": "Security Lead"}}, {"emailAddress": {"name": "CTO"}}]
+        },
+        {
+            "subject": "Hackathon Kickoff",
+            "start": {"dateTime": "2026-06-04T09:00:00"},
+            "end": {"dateTime": "2026-06-04T10:00:00"},
+            "attendees": [{"emailAddress": {"name": "All Engineering"}}]
+        },
+        {
+            "subject": "Lunch & Learn: AI Agents",
+            "start": {"dateTime": "2026-06-04T12:00:00"},
+            "end": {"dateTime": "2026-06-04T13:00:00"},
+            "attendees": [{"emailAddress": {"name": "Optional - All"}}]
+        },
+        {
+            "subject": "Customer Demo - Project Phoenix",
+            "start": {"dateTime": "2026-06-05T15:00:00"},
+            "end": {"dateTime": "2026-06-05T16:00:00"},
+            "attendees": [{"emailAddress": {"name": "Client Team"}}, {"emailAddress": {"name": "Sales"}}, {"emailAddress": {"name": "PM"}}]
+        },
+        {
+            "subject": "Team Retro",
+            "start": {"dateTime": "2026-06-06T16:00:00"},
+            "end": {"dateTime": "2026-06-06T17:00:00"},
+            "attendees": [{"emailAddress": {"name": "Dev Team"}}]
+        },
+        {
+            "subject": "Coffee Chat - New Intern",
+            "start": {"dateTime": "2026-06-06T10:00:00"},
+            "end": {"dateTime": "2026-06-06T10:30:00"},
+            "attendees": [{"emailAddress": {"name": "Jamie Park"}}]
+        }
+    ],
+    "emails": [
+        {
+            "subject": "RE: Architecture Proposal - Approved!",
+            "from": {"emailAddress": {"name": "Sarah Chen", "address": "sarah@contoso.com"}},
+            "receivedDateTime": "2026-06-03T16:42:00Z",
+            "bodyPreview": "Great news! The CTO approved our new auth architecture. Let's start implementation next sprint."
+        },
+        {
+            "subject": "Hackathon Team Formation",
+            "from": {"emailAddress": {"name": "Dev Community", "address": "devcomm@contoso.com"}},
+            "receivedDateTime": "2026-06-04T08:15:00Z",
+            "bodyPreview": "Who wants to team up for the AI agents hackathon? We need frontend and ML expertise."
+        },
+        {
+            "subject": "Customer Feedback - They loved it!",
+            "from": {"emailAddress": {"name": "Mike Torres", "address": "mike@contoso.com"}},
+            "receivedDateTime": "2026-06-05T17:30:00Z",
+            "bodyPreview": "The client was blown away by the demo. They want to expand the contract. Amazing work!"
+        },
+        {
+            "subject": "FYI: Production incident resolved",
+            "from": {"emailAddress": {"name": "Ops Team", "address": "ops@contoso.com"}},
+            "receivedDateTime": "2026-06-03T02:15:00Z",
+            "bodyPreview": "The database connection pool issue from last night has been resolved. No data loss."
+        },
+        {
+            "subject": "Your PR got 5 approvals 🎉",
+            "from": {"emailAddress": {"name": "GitHub Bot", "address": "noreply@github.com"}},
+            "receivedDateTime": "2026-06-06T11:00:00Z",
+            "bodyPreview": "Your pull request 'Implement OAuth2 PKCE flow' has been approved by 5 reviewers and is ready to merge."
+        }
+    ],
+    "teams_chats": [
+        {
+            "chatTopic": "Project Phoenix",
+            "from": "Lisa Wang",
+            "content": "The new dashboard looks incredible! Customers are going to love this.",
+            "createdDateTime": "2026-06-05T14:20:00Z"
+        },
+        {
+            "chatTopic": "Engineering General",
+            "from": "Dev Bot",
+            "content": "Build pipeline green ✅ - all 347 tests passing after the refactor.",
+            "createdDateTime": "2026-06-04T16:45:00Z"
+        },
+        {
+            "chatTopic": "Direct Message",
+            "from": "Sarah Chen",
+            "content": "Hey, great job presenting to the CTO today. Really clear and confident!",
+            "createdDateTime": "2026-06-03T17:00:00Z"
+        },
+        {
+            "chatTopic": "Hackathon Channel",
+            "from": "Jamie Park",
+            "content": "Who's building the AI agent thing? I want in!",
+            "createdDateTime": "2026-06-04T10:30:00Z"
+        }
+    ],
+    "period": {
+        "start": "2026-06-02T00:00:00+00:00",
+        "end": "2026-06-08T23:59:59+00:00"
+    }
+}

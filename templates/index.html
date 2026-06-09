@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week in Review - Your Work Week, Reimagined</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📖 Week in Review</h1>
+            <p class="subtitle">Your work week, reimagined as a story</p>
+            <p class="powered-by">Powered by <strong>Microsoft Work IQ</strong> + <strong>GitHub Models</strong></p>
+        </header>
+
+        <main>
+            <div class="card-grid">
+                <div class="card card-live">
+                    <div class="card-icon">🔐</div>
+                    <h2>Live Mode</h2>
+                    <p>Connect to your Microsoft 365 account and generate a story from your actual work week data.</p>
+                    <ul>
+                        <li>📅 Calendar events</li>
+                        <li>📧 Emails sent & received</li>
+                        <li>💬 Teams conversations</li>
+                    </ul>
+                    <form action="/generate" method="post">
+                        <button type="submit" class="btn btn-primary">
+                            Generate My Story ✨
+                        </button>
+                    </form>
+                    <p class="note">Requires Microsoft sign-in (Device Code Flow)</p>
+                </div>
+
+                <div class="card card-demo">
+                    <div class="card-icon">🎭</div>
+                    <h2>Demo Mode</h2>
+                    <p>See how it works using sample data — no sign-in required!</p>
+                    <ul>
+                        <li>🎯 Pre-loaded sample week</li>
+                        <li>⚡ Instant generation</li>
+                        <li>🌟 Same creative output</li>
+                    </ul>
+                    <form action="/generate-demo" method="post">
+                        <button type="submit" class="btn btn-secondary">
+                            Try Demo 🎬
+                        </button>
+                    </form>
+                    <p class="note">Uses sample data for demonstration</p>
+                </div>
+            </div>
+
+            <section class="how-it-works">
+                <h2>How It Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <span class="step-num">1</span>
+                        <strong>Connect</strong>
+                        <p>Sign in to Microsoft 365 via Device Code Flow</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">2</span>
+                        <strong>Collect</strong>
+                        <p>Work IQ pulls your calendar, emails & chats</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">3</span>
+                        <strong>Create</strong>
+                        <p>GitHub Models AI crafts your narrative</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">4</span>
+                        <strong>Enjoy</strong>
+                        <p>Read your week as a magazine-style story!</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Built for <strong>Agents League Hackathon 2026</strong> | 
+               Microsoft IQ Integration: <strong>Work IQ</strong> | 
+               AI: <strong>GitHub Models (GPT-4o)</strong></p>
+        </footer>
+    </div>
+</body>
+</html>
