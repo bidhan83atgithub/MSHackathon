@@ -82,9 +82,11 @@ Click **"Generate Demo"** to see the app create a story from sample data — per
 
 ## 📸 Screenshots
 
-_Coming soon — demo video will be added before submission._
+![Title Slide](images/title_slide.png)
 
 ## 🏗️ Architecture
+
+![Architecture Diagram](images/architecture.png)
 
 ```
 ┌──────────────────────────────────────┐
